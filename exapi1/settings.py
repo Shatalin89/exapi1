@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'exapi1.wsgi.application'
-
+TASTYPIE_DEFAULT_FORMATS = ['json']
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

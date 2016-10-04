@@ -4,6 +4,7 @@ from tastypie.constants import ALL
 from tastypie.authorization import Authorization
 from exapi1.exdb.models import Entry
 from tastypie import fields
+from tastypie.authentication import BasicAuthentication
 
 
 class UserResource(ModelResource):
@@ -12,6 +13,8 @@ class UserResource(ModelResource):
         resource_name = 'user'
         excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser']
         allowed_methods = ['get']
+        authentication = BasicAuthentication()
+
 class EntryResource(ModelResource):
 
     user = fields.ForeignKey(UserResource, 'user')
